@@ -8,9 +8,17 @@
 <body>
     <header>
         <h1>My E-Commerce Store</h1>
-        <nav>
-            <a href="/">Home</a>
-        </nav>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/cart">Cart</a>
+        {% if user %}
+            <span>Welcome, {{ user }}</span>
+            <a href="/logout">Logout</a>
+        {% else %}
+            <a href="/login">Login</a>
+            <a href="/signup">Signup</a>
+        {% endif %}
+    </nav>
     </header>
 
     <main>
@@ -20,5 +28,6 @@
     <footer>
         <p>© 2025 My Store. All rights reserved.</p>
     </footer>
+
 </body>
 </html>
